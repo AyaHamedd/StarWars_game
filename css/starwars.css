@@ -1,51 +1,32 @@
+html , body{
+    height: 100%;
+    width: 100%;
+}
 body {
-    margin: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
+  
     justify-content: center;
-    background-color: teal;
     background-image:url('../img/starwars_background.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-size: cover;
 }
 
 
 
-h1{ position:fixed;
-    top :5px;
-    right:500px;
+.startwars-title{ 
     font-family: "Copperplate";
-    font-weight: 700;
-    font-size: 120px;
-    margin-left:400px;
     color: white;
-  
+    font-weight: 700;
+    font-size: 6rem;
   }
 
-  img 
+  .gif-img 
   {  width: 110px;
       height:110px ;
      
 
 
-
-
-
-
-
   }
 
-
-
-
-
-
-
-
-
-  
 
 :root {
     font-size: 10px;
@@ -59,17 +40,50 @@ nav ul {
 nav li {
     width: 20rem;
     height: 7rem;
-    font-size: 20px;
     text-align: center;
+    position: relative;
+    top:20px;
+    transition: 0.3s;
+    margin: 3rem;
+}
+nav li a {
+    color: black;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 20px;
     line-height: 7rem;
     font-family: sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
-    position: relative;
-    top:70px;
-    transition: 0.3s;
-    margin: 3rem;
+    width: 20rem; 
+    height: 7rem;
+    display: inline-block;
+   
 }
+
+
+nav li a:active {
+    color:white;
+   
+}
+
+nav li a:visited {
+    color:black;
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 nav li::before,
 nav li::after {
