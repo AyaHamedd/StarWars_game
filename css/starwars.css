@@ -5,7 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     background-color: teal;
-    background-image:url('background2.jpg');
+    background-image:url('../images/starwars_background.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-size: cover;
