@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/selectCharacter.css">
+</head>
+
+<body id="launchingRocket">
+    <p style="color:rgb(255, 143, 199);font-family:'Courier New';font-weight: 900; text-align: center;font-size: 30;">Your ship is
+        launching!</p>
+    <img id="characterInsideShip">
+    <script>
+        const character = localStorage.getItem("selectedCharacter");
+        document.getElementById("characterInsideShip").src = "../img/" + character + ".png";
+        setTimeout(myFunction, 5000);
+        function myFunction() {
+            window.location.href = "../html/level.html";
+        }
+    </script>
+</body>

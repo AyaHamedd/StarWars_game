@@ -1,0 +1,144 @@
+#chooseCharacter {
+  padding: 25px;
+  background: url(../img/selectCharacter.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#launchingRocket{
+  padding: 25px;
+  background: url(../img/rocket.gif);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#characterInsideShip{
+  height:145px;
+  left: 49.7%; 
+  top: 244px;
+  -webkit-transform: translate(-50%, 0); 
+  transform: translate(-50%, 0);
+  position: absolute;
+}
+
+#Title {
+  color:whitesmoke;
+  position: absolute;
+  /*margin-left: 340;
+  margin-top: 5;*/
+  left: 25%; 
+  font-size: 50;
+  font-weight:bold;
+  font-family: "Courier New";
+  color: #FFFFFF;
+  text-shadow: 0 -1px 4px rgb(254, 255, 183), 0 -2px 10px rgb(0, 217, 255), 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+}
+#pink {
+  height:120px;
+  margin-top: 200;
+  margin-left: 47;
+  position: absolute;
+}
+#white {
+  height:120px;
+  margin-top: 180;
+  margin-left: 1170;
+  position: absolute;
+}
+#orange{
+  height:120px;
+  margin-top: 170;
+  margin-left: 690;
+  position: absolute;
+}
+#red{
+  height:120px;
+  margin-top: 230;
+  margin-left: 495;
+  position: absolute;
+}
+#blue{
+  height:120px;
+  margin-top: 240;
+  margin-left:940;
+  position: absolute;
+}
+#green{
+  height:120px;
+  margin-top: 150;
+  margin-left: 270;
+  position: absolute;
+}
+
+#pink:hover,#red:hover,#blue:hover,#green:hover,#orange:hover,#white:hover{
+  transform: scale(1.2); 
+}
+
+#startGameBtn{
+  margin-top: 500;
+  margin-left: 550;
+}
+
+#startGameBtn {
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  color: #FFFFFF;
+  font-family: Courier New;
+  font-size: 24px;
+  font-weight: 700;
+  padding: 14px;
+  background-color: #3DD3F6;
+  -webkit-box-shadow: -1px 1px 20px 0 #FFFFFF;
+  -moz-box-shadow: -1px 1px 20px 0 #FFFFFF;
+  box-shadow: -1px 1px 20px 0 #FFFFFF;
+  text-shadow: 2px 1px 20px #000000;
+  border: solid #FFFFFF 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+#startGameBtn:hover {
+  background: #00FF7C;
+  border: double #FFFFFF 1px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+
+#homeBtn{
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+#homeBtn {
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-family: Courier New;
+  font-size: 19px;
+  font-weight: 700;
+  padding: 7px;
+  background-color: #3DD3F6;
+  text-shadow: 2px 1px 20px #000000;
+  border: solid #FFFFFF 1px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+#homeBtn:hover {
+  background: #29C708;
+  border: solid #FFFFFF 1px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-decoration: none;
+}
