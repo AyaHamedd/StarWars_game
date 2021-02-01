@@ -2,34 +2,31 @@ html , body{
     height: 100%;
     width: 100%;
 }
+
 body {
-  
     justify-content: center;
     background-image:url('../img/starwars_background.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-
-
 .startwars-title{ 
-    font-family: "Copperplate";
+    font-family: "Courier New";
     color: white;
     font-weight: 700;
-    font-size: 6rem;
-  }
+    margin-left: 11vw;
+    margin-top: 5vh;
+    font-size: 6vw;
+    text-shadow: -0.1vw -0.1vw 0.1vw rgba(255,255,255,.1), 0.1vw 0.1vw 0.1vw rgba(0,0,0,.5), -3vw 3vw 0.2vw rgba(206,134,0,0);  }
 
   .gif-img 
-  {  width: 110px;
-      height:110px ;
-     
-
-
+  {  
+      width: 8vw;
   }
 
 
 :root {
-    font-size: 10px;
+    font-size: 0.8vw;
 }
 
 nav ul {
@@ -38,52 +35,36 @@ nav ul {
 }
 
 nav li {
-    width: 20rem;
-    height: 7rem;
+    top:1vh;
+    width: 17vw;
+    height: 11vh;
     text-align: center;
     position: relative;
-    top:20px;
-    transition: 0.3s;
-    margin: 3rem;
+    transition: 0.2s;
+    margin: 5vh;
 }
 nav li a {
     color: black;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 20px;
-    line-height: 7rem;
+    font-size: 1.5vw;
+    line-height: 12vh;
     font-family: sans-serif;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    width: 20rem; 
-    height: 7rem;
+    letter-spacing: 0.1vw;
+    width: 17vw; 
+    height: 2vh;
     display: inline-block;
    
 }
-
-
 nav li a:active {
     color:white;
    
 }
-
 nav li a:visited {
     color:black;
    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 nav li::before,
 nav li::after {
@@ -99,17 +80,17 @@ nav li::after {
 nav li::before {
     background-color: white;
     z-index: -1;
-    box-shadow: 0.2rem 0.2rem 0.5rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0.1vw 0.1vw 0.1vw rgba(0, 0, 0, 0.2);
 }
 
 nav li::after {
     background-color: rgb(175, 68, 35);
-    transform: translate(1.5rem, 1.5rem);
+    transform: translate(1vw, 1vw);
     z-index: -2;
 }
 
 nav li:hover {
-    transform: translate(1.5rem, 1.5rem);
+    transform: translate(1vw, 1vw);
     color: white;
 }
 
@@ -119,5 +100,5 @@ nav li:hover::before {
 
 nav li:hover::after {
     background-color:white;
-    transform: translate(-1.5rem, -1.5rem);
+    transform: translate(-1vw, -1vw);
 }

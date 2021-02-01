@@ -27,7 +27,7 @@ function selectCharHandler(e){
         characters[i].style.borderRadius = ""
     }
     /*Add a border on the selected character*/
-    selectedCharImg.style.border="5px ridge #27FFE5";
-    selectedCharImg.style.borderRadius = "25px"
+    selectedCharImg.style.border="0.5vw ridge #27FFE5";
+    selectedCharImg.style.borderRadius = "2.5vw"
 }
 

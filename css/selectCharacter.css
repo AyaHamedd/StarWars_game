@@ -27,12 +27,13 @@ html , body{
 #Title {
   color:whitesmoke;
   position: absolute;
-  left: 30vw; 
+  left: 33vw; 
+  top:2vh;
   font-size: 3vw;
   font-weight:bold;
   font-family: "Courier New";
   color: #FFFFFF;
-  text-shadow: 0 -1px 4px rgb(254, 255, 183), 0 -2px 10px rgb(0, 217, 255), 0 -10px 20px #ff8000, 0 -18px 40px #F00;
+  text-shadow: -1px -1px 20px #09CEBD;
 }
 
 #pink {
@@ -92,11 +93,11 @@ html , body{
   font-weight: 700;
   padding: 0.5vw;
   background-color: #3DD3F6;
-  -webkit-box-shadow: -1px 1px 20px 0 #FFFFFF;
-  -moz-box-shadow: -1px 1px 20px 0 #FFFFFF;
-  box-shadow: -1px 1px 20px 0 #FFFFFF;
-  text-shadow: 2px 1px 20px #000000;
-  border: solid #FFFFFF 1px;
+  -webkit-box-shadow: -0.1vw 0.1vw 0.5vw 0 #FFFFFF;
+  -moz-box-shadow: -0.1vw 0.1vw 0.5vw 0 #FFFFFF;
+  box-shadow: -0.1vw 0.1vw 0.5vw 0 #FFFFFF;
+  text-shadow: 0.2vw 0.2vw 0.5vw #000000;
+  border: solid #FFFFFF 0.1vw;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
@@ -105,7 +106,7 @@ html , body{
 
 #startGameBtn:hover {
   background: #00FF7C;
-  border: double #FFFFFF 1px;
+  border: double #FFFFFF 0.1vw;
   -webkit-border-radius: 1.2vw;
   -moz-border-radius: 1.2vw;
   border-radius: 1.2vw;
@@ -129,8 +130,8 @@ html , body{
   font-weight: 700;
   padding: 0.5vw;
   background-color: #3DD3F6;
-  text-shadow: 2px 1px 20px #000000;
-  border: solid #FFFFFF 1px;
+  text-shadow: 0.1vw 0.1vw 1vw #000000;
+  border: solid #FFFFFF 0.1vw;
   text-decoration: none;
   display: inline-block;
   cursor: pointer;
@@ -139,9 +140,9 @@ html , body{
 
 #homeBtn:hover {
   background: #29C708;
-  border: solid #FFFFFF 1px;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: solid #FFFFFF 0.1vw;
+  -webkit-border-radius: 1.2vw;
+  -moz-border-radius: 1.2vw;
+  border-radius: 1.2vw;
   text-decoration: none;
 }
