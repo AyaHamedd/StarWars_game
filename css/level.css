@@ -12,8 +12,8 @@
 
 #ground{
     position: absolute;
-    margin-top: 592px;
-    margin-left: -7px;
+    bottom: 0;
+    left:0;
     background: url(../img/ground.jpg);
     height: 40px;
     width: 100%;
@@ -21,13 +21,16 @@
     background-size: cover;
 }
 
-#planet{
+.planet{
     position: absolute;
-    left: 100px;
+    width:90px;
+    left: 1px;
+    visibility: hidden;
 }
 
 #player{
     position: absolute;
+    height:100px;
     left: 45%;
-    top: 500px;
+    bottom:40px;
 }

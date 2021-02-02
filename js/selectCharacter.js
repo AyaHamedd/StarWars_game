@@ -13,7 +13,6 @@ orangeCharacter.addEventListener("click", selectCharHandler);
 redCharacter.addEventListener("click", selectCharHandler);
 blueCharacter.addEventListener("click", selectCharHandler);
 greenCharacter.addEventListener("click", selectCharHandler);
-startButton.addEventListener("click", startGame);
 
 
 function selectCharHandler(e){
