@@ -1,6 +1,7 @@
 /* Set the selected character as the player in the scene */
 const character = localStorage.getItem("selectedCharacter");
 const player = document.getElementById("player");
+const body = document.querySelector("body");
 player.src = "../img/" + character + ".png";
 
 /* Get the array of planets (balls) in the scene*/
@@ -8,13 +9,14 @@ const planet = document.getElementsByClassName("planet");
 
 /*Ball class*/
 class Ball {
-    constructor(image, x, y, d, vx, vy) {
+    constructor(image, x, y, d, vx, vy, isNew) {
         this.img = image;
         this.left = x;
         this.top = y;
         this.diameter = d;
         this.velX = vx;
         this.velY = vy;
+        this.isNew = isNew;
     }
 
     static moveball() {
@@ -37,30 +39,40 @@ class Ball {
         }
     }
 
+    cloneImage() {
+        let clonedImage = this.img.cloneNode(true);
+        clonedImage.style.width = (this.img.width - 20) + "px";
+        clonedImage.style.height = (this.img.height - 19) + "px";
+
+        return clonedImage;
+    }
+
     splitBall(){
         console.log(balls);
         console.log(this.img.width);
         console.log(this.img.height);
         console.log(this.img);
 
-        let newBall1 = new Ball(this.img, this.left - 10, this.top + 3, this.diameter / 2, this.velX, this.velY );
-        let newBall2 = new Ball(this.img, this.left + 10, this.top + 3, this.diameter / 2, this.velX, this.velY );
+        let newBall1 = new Ball(this.cloneImage(), this.left - 10, this.top + 3, this.diameter - 20, this.velX, this.velY, true );
+        let newBall2 = new Ball(this.cloneImage(), this.left + 10, this.top + 3, this.diameter - 20, - this.velX, this.velY, true );
 
-        newBall1.img.width = this.img.width / 2;
-        newBall1.img.height = this.img.height / 2;
+        console.log("width: " + newBall1.img.width);
+        console.log("height: " + newBall1.img.height);
 
-        console.log(newBall1);
+        body.appendChild(newBall1.img);
+        body.appendChild(newBall2.img);
 
         let ballIndex = balls.indexOf(this);
         balls.splice(ballIndex, 1);
         balls.push(newBall1);
         balls.push(newBall2);
-        console.log(balls);
+
+        this.img.style.visibility = "hidden";
     }
     
 }
 
-var ball1 = new Ball(planet[0], 1, 100, 90, 1, 0.1);
+var ball1 = new Ball(planet[0], 1, 100, 90, 1, 0.1, true);
 // var ball2 = new Ball(planet[1], 150, 100, 90, 1, 0.1);
 // var ball3 = new Ball(planet[2], 50, 200, 90, 1, 0.1);
 // var ball4 = new Ball(planet[3], 200, 400, 90, 1, 0.1);
@@ -80,15 +92,19 @@ var gravity = 0.1;
 function startGame() {
     readyLabel.style.visibility = "hidden";
     setInterval(Ball.moveball, 20);
-
-    balls[0].img.addEventListener("click", function() {
-        balls[0].splitBall();
-    });
-
-    // for (const ball of balls) {
-    //     ball.splitBall();
-    // }
 }
 
+var addClickListener = function(){
+    for (let ball of balls) {
+        if(ball.isNew){
+            ball.img.addEventListener("click", function() {
+                ball.splitBall();
+            });   
+            ball.isNew = false;
+        }
+    }
+}
+
+setInterval(addClickListener, 20);
 
 
