@@ -1,6 +1,7 @@
 /* Set the selected character as the player in the scene */
 const character = localStorage.getItem("selectedCharacter");
 const player = document.getElementById("player");
+let keys = [];
 
 //class mainplayer
 class MainPlayer {

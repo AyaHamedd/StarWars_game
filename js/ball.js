@@ -1,6 +1,5 @@
 const gravity = 0.1;
 const maxSpeed = 9;
-const groundHeight = 40;
 const tolerance = 2;
 
 /*Ball class*/
