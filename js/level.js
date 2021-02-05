@@ -8,7 +8,7 @@ let mainPlayer = new MainPlayer();
 var alive = true;
 const groundHeight = 40;
 const roofToPlayerDistance = ctx.canvas.height - groundHeight - mainPlayer.height;
-const collisionTolerance = 4;
+const collisionTolerance = 6;
 
 /* Get the array of planets (balls) in the scene*/
 const planet = document.getElementsByClassName("planet");
@@ -47,7 +47,7 @@ class Game {
     playerBallCollision(ball) {
         var roofToBallButtomDistance = ball.top + ball.diameter - collisionTolerance;
         var ballRightDistance = ball.left + ball.diameter - collisionTolerance;
-        var playerRightDistance = mainPlayer.x + mainPlayer.width + collisionTolerance;
+        var playerRightDistance = mainPlayer.x + mainPlayer.width - collisionTolerance;
         return (roofToBallButtomDistance > roofToPlayerDistance) && (ballRightDistance > mainPlayer.x) && (ball.left < playerRightDistance);
     }
 }
@@ -57,8 +57,3 @@ window.onload = function () {
     levelOne.drawBalls();
     mainPlayer.draw();
 };
-
-
-
-
-
