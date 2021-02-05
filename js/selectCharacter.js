@@ -14,6 +14,7 @@ redCharacter.addEventListener("click", selectCharHandler);
 blueCharacter.addEventListener("click", selectCharHandler);
 greenCharacter.addEventListener("click", selectCharHandler);
 
+localStorage.setItem("selectedCharacter", "pink"); 
 
 function selectCharHandler(e){
     /*Set The selectedCharacter to the character id that triggered the function*/

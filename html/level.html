@@ -8,35 +8,19 @@
 </head>
 
 <body>
-    <style>
-       body {
-            background: url(../img/level1.jpg);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-       /*remove character from html*/
-        #player{
-            display: none;
-        }
-       
-        
-     
-    </style>
     <div id="ground"></div>
-    <p id="readyLabel">Get Ready!<br>
-        Level One
-    </p>
-    <img id="player" class ="playes" class="playes2">
+    <p id="readyLabel">Get Ready!<br>Level One</p>
+    <img id="player">
     <img class="planet" src="../img/planet3.png">
     <img class="planet" src="../img/planet4.png">
     <img class="planet" src="../img/planet1.png">
     <img class="planet" src="../img/planet2.png">
     <img class="planet" src="../img/planet5.png">
- 
+
     <!-- canvas -->
-    <canvas id="myCanvas" ></canvas>
- 
+    <canvas id="myCanvas"></canvas>
+    <script type="text/javascript" src="../js/moving-character.js"></script>
+    <script type="text/javascript" src="../js/ball.js"></script>
     <script type="text/javascript" src="../js/level.js"></script>
-    <script type="text/javascript" src="../js/moving-character.js"></script> 
-  
+
 </body>
