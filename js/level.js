@@ -13,11 +13,11 @@ const collisionTolerance = 6;
 /* Get the array of planets (balls) in the scene*/
 const planet = document.getElementsByClassName("planet");
 let ball1 = new Ball(planet[0], 1, 300, 90, 1, 0.1);
-let ball2 = new Ball(planet[1], 150, 100, 90, 1, 0.1);
-let ball3 = new Ball(planet[2], 50, 200, 90, 1, 0.1);
-let ball4 = new Ball(planet[3], 200, 400, 90, 1, 0.1);
-let ball5 = new Ball(planet[4], 250, 100, 90, 1, 0.1);
-let balls = [ball1, ball2, ball3, ball4, ball5];
+// let ball2 = new Ball(planet[1], 150, 100, 90, 1, 0.1);
+// let ball3 = new Ball(planet[2], 50, 200, 90, 1, 0.1);
+// let ball4 = new Ball(planet[3], 200, 400, 90, 1, 0.1);
+// let ball5 = new Ball(planet[4], 250, 100, 90, 1, 0.1);
+let balls = [ball1];
 
 setTimeout(startGame, 3000);
 function startGame() {
@@ -57,3 +57,19 @@ window.onload = function () {
     levelOne.drawBalls();
     mainPlayer.draw();
 };
+
+canvas.addEventListener("mousedown", function (e) {
+    var mouseX = e.offsetX;
+    var mouseY = e.offsetY;
+
+    for (const ball of balls) {
+        console.log(ball);
+        if(mouseX >= ball.left
+            && mouseX <= (ball.left + ball.diameter)
+            && mouseY >= ball.top
+            && mouseY <= (ball.top + ball.diameter)) {
+                ball.splitBall();
+                break;
+            }
+    }
+});

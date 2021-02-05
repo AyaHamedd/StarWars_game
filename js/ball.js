@@ -28,7 +28,7 @@ class Ball {
             this.velY = -this.velY;
         }
     }
-    
+
     move() {
         this.left += this.velX;
         this.top += this.velY;
@@ -37,8 +37,35 @@ class Ball {
         this.checkBoundaries();
     }
 
+    cloneImage() {
+        let clonedImage = this.img.cloneNode(true);
+        clonedImage.style.width = (this.img.width - 20) + "px";
+        clonedImage.style.height = (this.img.height - 19) + "px";
+
+        return clonedImage;
+    }
+
+    splitBall(){
+        console.log(balls);
+        console.log(this.img.width);
+        console.log(this.img.height);
+        console.log(this.img);
+
+        //diameter = 30 smallest ball
+        let newBall1 = new Ball(this.cloneImage(), this.left - 10, this.top + 3, this.diameter - 20, this.velX, this.velY);
+        let newBall2 = new Ball(this.cloneImage(), this.left + 10, this.top + 3, this.diameter - 20, - this.velX, this.velY);
+
+        console.log("width: " + newBall1.img.width);
+        console.log("height: " + newBall1.img.height);
+
+        let ballIndex = balls.indexOf(this);
+        balls.splice(ballIndex, 1);
+        balls.push(newBall1);
+        balls.push(newBall2);
+    }
+
     draw() {
-        this.move();
         ctx.drawImage(this.img, this.left, this.top, this.diameter, this.diameter);
+        this.move();
     }
 }
