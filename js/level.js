@@ -18,8 +18,9 @@ let ball1 = new Ball(planet[0], 1, 300, 90, 1, 0.1);
 // let ball4 = new Ball(planet[3], 200, 400, 90, 1, 0.1);
 // let ball5 = new Ball(planet[4], 250, 100, 90, 1, 0.1);
 let balls = [ball1];
+let laserBeam = new LaserBeam();
+let keys = [];
 
-setTimeout(startGame, 3000);
 function startGame() {
     readyLabel.style.visibility = "hidden";
     levelOne.update();
@@ -30,6 +31,7 @@ class Game {
         if (alive) {
             requestAnimationFrame(() => this.update());
             ctx.clearRect(0, 0, canvas.width, canvas.height);
+            laserBeam.update();
             mainPlayer.update();
             this.drawBalls();
         }
@@ -52,18 +54,12 @@ class Game {
     }
 }
 
-var levelOne = new Game();
-window.onload = function () {
-    levelOne.drawBalls();
-    mainPlayer.draw();
-};
-
 canvas.addEventListener("mousedown", function (e) {
     var mouseX = e.offsetX;
     var mouseY = e.offsetY;
 
     for (const ball of balls) {
-        console.log(ball);
+        // console.log(ball);
         if(mouseX >= ball.left
             && mouseX <= (ball.left + ball.diameter)
             && mouseY >= ball.top
@@ -73,3 +69,19 @@ canvas.addEventListener("mousedown", function (e) {
             }
     }
 });
+
+// key events
+document.body.addEventListener("keydown", function (e) {
+    keys[e.keyCode] = true;
+    console.log(e.keyCode);
+});
+document.body.addEventListener("keyup", function (e) {
+    keys[e.keyCode] = false;
+});
+
+setTimeout(startGame, 2000);
+var levelOne = new Game();
+window.onload = function () {
+    levelOne.drawBalls();
+    mainPlayer.draw();
+};

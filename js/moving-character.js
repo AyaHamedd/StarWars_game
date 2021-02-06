@@ -1,7 +1,7 @@
 /* Set the selected character as the player in the scene */
 const character = localStorage.getItem("selectedCharacter");
 const player = document.getElementById("player");
-let keys = [];
+
 
 //class mainplayer
 class MainPlayer {
@@ -65,10 +65,3 @@ class MainPlayer {
     }
 }
 
-// key events
-document.body.addEventListener("keydown", function (e) {
-    keys[e.keyCode] = true;
-});
-document.body.addEventListener("keyup", function (e) {
-    keys[e.keyCode] = false;
-});
