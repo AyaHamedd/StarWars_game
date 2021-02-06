@@ -42,3 +42,7 @@ body {
     bottom:40px;
     display: none;
 }
+#laser{
+    position: absolute;
+    display: none;  
+}
