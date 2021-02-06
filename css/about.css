@@ -1,0 +1,94 @@
+
+body {
+  background: linear-gradient(to right, #ef32d9, #89fffd);
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+}
+
+.container div {
+  margin: 0px;
+  float: left;
+  padding: 0px;
+  transition: all 1s ease-in-out;
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0px;
+}
+
+p {
+  font-family: "Courier New";
+  text-align: center;
+  font-weight: 700;
+  font-size: 2vw;
+  margin: 0px 0px 0px 100px;
+  padding: 0px;
+  color: white;
+
+}
+
+.part1 {
+  left: 0px;
+  top: 0px;
+  justify-content: left;
+  background-image: url('../img/p1.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.part2 {
+  right: 0px;
+  top: 0px;
+  justify-content: right;
+  background-image: url('../img/p2.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 100%;
+  height: 100%;
+}
+
+.container:hover .part1 {
+  left: -600px;
+}
+
+.container:hover .part2 {
+  right: -600px;
+}
+
+#homeBtn {
+  position: absolute;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+#homeBtn {
+  -webkit-border-radius: 1.2vw;
+  -moz-border-radius: 1.2vw;
+  border-radius: 1.2vw;
+  color: #FFFFFF;
+  font-family: Courier New;
+  font-size: 1.4vw;
+  font-weight: 700;
+  padding: 0.5vw;
+  background-color: #3DD3F6;
+  text-shadow: 0.1vw 0.1vw 1vw #000000;
+  border: solid #FFFFFF 0.1vw;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+}
+
+#homeBtn:hover {
+  background: #ef32d9;
+  border: solid #FFFFFF 0.1vw;
+  -webkit-border-radius: 1.2vw;
+  -moz-border-radius: 1.2vw;
+  border-radius: 1.2vw;
+  text-decoration: none;
+}
