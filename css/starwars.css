@@ -5,7 +5,7 @@ html , body{
 
 body {
     justify-content: center;
-    background-image:url('../img/starwars_background.jpg');
+    background-image:url('../img/starwars_bg1.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
@@ -44,7 +44,7 @@ nav li {
     margin: 5vh;
 }
 nav li a {
-    color: black;
+    color: white;
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.5vw;
@@ -58,11 +58,11 @@ nav li a {
    
 }
 nav li a:active {
-    color:white;
+    color:purple;
    
 }
 nav li a:visited {
-    color:black;
+    color:purple;
    
 }
 
@@ -84,7 +84,7 @@ nav li::before {
 }
 
 nav li::after {
-    background-color: rgb(175, 68, 35);
+    background-color: rgb(35, 147, 175);
     transform: translate(1vw, 1vw);
     z-index: -2;
 }
@@ -95,7 +95,7 @@ nav li:hover {
 }
 
 nav li:hover::before {
-    background-color:rgb(175, 68, 35);
+    background-color:rgb(35, 147, 175);
 }
 
 nav li:hover::after {
