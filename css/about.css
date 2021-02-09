@@ -1,13 +1,15 @@
 
 body {
-  background: linear-gradient(to right, #ef32d9, #89fffd);
+  background-image: url(../img/space.jpg);
+  background-size: cover;
+  overflow: hidden;
 }
 
 .container {
   width: 100%;
   height: 100%;
   margin: 0px;
-  overflow: hidden;
+  
 }
 
 .container div {
@@ -36,7 +38,7 @@ p {
   left: 0px;
   top: 0px;
   justify-content: left;
-  background-image: url('../img/p1.jpg');
+  background-image: url('../img/door1.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -45,7 +47,7 @@ p {
   right: 0px;
   top: 0px;
   justify-content: right;
-  background-image: url('../img/p2.jpg');
+  background-image: url('../img/door2.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;

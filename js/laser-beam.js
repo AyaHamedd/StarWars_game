@@ -8,14 +8,16 @@ class LaserBeam {
 
         this.width = 15;
         this.height = 800;
-        this.speed = 10;
+        this.speed = 20;
         this.y = 0;
         this.fired = false;
+        this.sound = new Audio('../sounds/laser.wav');
         laser.src = "../img/" + character + "Laser.png";
     }
 
     //draw laserBeam
     fire() {
+        this.sound.play();
         playerMiddle = mainPlayer.x + mainPlayer.width / 2;
         this.y = mainPlayer.y;
         this.fired = true;
