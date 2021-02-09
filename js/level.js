@@ -1,17 +1,13 @@
-//canvas
-const canvas = document.getElementById("myCanvas"),
+const gameBody = document.getElementsByTagName("body")[0];
+const livesBlock = document.getElementById("lives");
+const canvas = document.getElementById("myCanvas");
+const planet = document.getElementsByClassName("planet");
+
 ctx = canvas.getContext("2d");
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
 let mainPlayer = new MainPlayer();
-var alive = true;
-const groundHeight = 40;
-const roofToPlayerDistance = ctx.canvas.height - groundHeight - mainPlayer.height;
-const collisionTolerance = 6;
-
-/* Get the array of planets (balls) in the scene*/
-const planet = document.getElementsByClassName("planet");
 let ball1 = new Ball(planet[0], 1, 300, 90, 1, 0.1);
 // let ball2 = new Ball(planet[1], 150, 100, 90, 1, 0.1);
 // let ball3 = new Ball(planet[2], 50, 200, 90, 1, 0.1);
@@ -21,14 +17,14 @@ let balls = [ball1];
 let laserBeam = new LaserBeam();
 let keys = [];
 
-function startGame() {
-    readyLabel.style.visibility = "hidden";
-    levelOne.update();
-}
+livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
+const groundHeight = 40;
+const roofToPlayerDistance = ctx.canvas.height - groundHeight - mainPlayer.height;
+const collisionTolerance = 13;
 
 class Game {
     update() {
-        if (alive) {
+        if (mainPlayer.alive) {
             requestAnimationFrame(() => this.update());
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             laserBeam.update();
@@ -41,7 +37,7 @@ class Game {
         for (var i = 0; i < balls.length; i++) {
             balls[i].draw();
             if (this.playerBallCollision(balls[i])) {
-                alive = false;
+                this.loseLife();
             }
         }
     }
@@ -52,6 +48,37 @@ class Game {
         var playerRightDistance = mainPlayer.x + mainPlayer.width - collisionTolerance;
         return (roofToBallButtomDistance > roofToPlayerDistance) && (ballRightDistance > mainPlayer.x) && (ball.left < playerRightDistance);
     }
+
+    loseLife() {
+        mainPlayer.lives--;
+        livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
+        if (mainPlayer.lives == 0) {
+            mainPlayer.alive=false;
+            this.gameOver();
+        }
+        else {
+            //TODO :Update label make a delay then upload the same level again
+            // label.innerText = "";
+            // label.style.visibility = "visible";
+        }
+    }
+
+    gameOver() {
+        gameBody.style.backgroundBlendMode = "luminosity";
+        ground.style.filter = "grayscale(100%)";
+        label.innerText = "Game Over";
+        label.style.visibility = "visible";
+        document.getElementById("homeBtn").style.visibility = "visible";
+        document.getElementById("playBtn").style.visibility = "visible";
+    }
+
+    winGame() {
+        label.innerText = "Congratulations you won!";
+        label.style.visibility = "visible";
+        document.getElementById("homeBtn").style.visibility = "visible";
+        document.getElementById("playBtn").style.visibility = "visible";
+        gameBody.style.backgroundImage = "url('../img/celebrate.gif')";
+    }
 }
 
 canvas.addEventListener("mousedown", function (e) {
@@ -60,17 +87,28 @@ canvas.addEventListener("mousedown", function (e) {
 
     for (const ball of balls) {
         // console.log(ball);
-        if(mouseX >= ball.left
+        if (mouseX >= ball.left
             && mouseX <= (ball.left + ball.diameter)
             && mouseY >= ball.top
             && mouseY <= (ball.top + ball.diameter)) {
-                ball.splitBall();
-                break;
-            }
+            ball.splitBall();
+            break;
+        }
     }
 });
 
-// key events
+var levelOne = new Game();
+setTimeout(startGame, 2000);
+window.onload = function () {
+    levelOne.drawBalls();
+    mainPlayer.draw();
+};
+
+function startGame() {
+    label.style.visibility = "hidden";
+    levelOne.update();
+}
+
 document.body.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
     console.log(e.keyCode);
@@ -78,10 +116,3 @@ document.body.addEventListener("keydown", function (e) {
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
-
-setTimeout(startGame, 2000);
-var levelOne = new Game();
-window.onload = function () {
-    levelOne.drawBalls();
-    mainPlayer.draw();
-};
