@@ -42,6 +42,12 @@ class MainPlayer {
         player.src = "../img/" + character + 'Left' + ".png";
     }
 
+    resetPlayer(){
+        this.x = this.gameWidth / 2 - this.width / 2;
+        this.y = this.gameHeight - this.height - 40;
+        player.src = "../img/" + character + ".png";
+    }
+
     update() {
         // check the keys and do the movement.
         if (keys[39]) {

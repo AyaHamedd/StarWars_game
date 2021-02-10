@@ -94,8 +94,8 @@ class Game {
         for (var i = 0; i < balls.length; i++) {
             balls[i].draw();
             if (this.playerBallCollision(balls[i])) {
-                balls.splice(0, balls.length);
                 this.loseLife();
+                balls.splice(0, balls.length);
                 return;
             }
             if(this.laserBallCollision(balls[i])) {
@@ -134,22 +134,22 @@ class Game {
 
     loseLife() {
         mainPlayer.lives--;
-        console.log(mainPlayer.lives);
+        mainPlayer.alive=false;
+        gameBody.style.backgroundBlendMode = "luminosity";
+        ground.style.filter = "grayscale(100%)";
         livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
         if (mainPlayer.lives == 0) {
             mainPlayer.alive = false;
             this.gameOver();
         }
         else {
-            label.innerText = "level " + this.getLevel();
+            label.innerText = "You lost a life";
             label.style.visibility = "visible";
             setTimeout(restartGame, 2000);
         }
     }
 
     gameOver() {
-        gameBody.style.backgroundBlendMode = "luminosity";
-        ground.style.filter = "grayscale(100%)";
         label.innerText = "Game Over";
         label.style.visibility = "visible";
         document.getElementById("homeBtn").style.visibility = "visible";
@@ -175,6 +175,15 @@ class Game {
         document.getElementById("playBtn").style.visibility = "visible";
         gameBody.style.backgroundImage = "url('../img/celebrate.gif')";
     }
+
+    drawLevel(){
+        gameBody.style.backgroundBlendMode = "normal";
+        ground.style.filter = "grayscale(0%)";
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        levelOne.drawBalls();
+        mainPlayer.resetPlayer();
+        mainPlayer.draw();
+    }
 }
 
 var levelOne = new Game();
@@ -185,8 +194,7 @@ levelOne.setGround();
 label.innerText = "Level " + levelOne.getLevel();
 setTimeout(startGame, 2000);
 window.onload = function () {
-    levelOne.drawBalls();
-    mainPlayer.draw();
+    levelOne.drawLevel()
 };
 
 function startGame() {
@@ -195,9 +203,11 @@ function startGame() {
 }
 
 function restartGame() {
-    label.style.visibility = "hidden";
+    mainPlayer.alive=true;
+    label.innerText = "level " + levelOne.getLevel();
     levelOne.setBallsArray();
-    //levelOne.update();
+    levelOne.drawLevel()
+    setTimeout(startGame, 2000);
 }
 
 function setGame() {
