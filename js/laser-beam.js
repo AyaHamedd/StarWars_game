@@ -4,6 +4,7 @@ var playerMiddle;
 //class laserBeam 
 
 class LaserBeam {
+    playerMiddle = 0;
     constructor() {
 
         this.width = 15;
@@ -18,16 +19,25 @@ class LaserBeam {
     //draw laserBeam
     fire() {
         this.sound.play();
-        playerMiddle = mainPlayer.x + mainPlayer.width / 2;
+        this.playerMiddle = mainPlayer.x + mainPlayer.width / 2;
+        //this.setPlayerMiddle();
         this.y = mainPlayer.y;
         this.fired = true;
-        ctx.drawImage(laser, playerMiddle, mainPlayer.y, this.width, this.height);
+        ctx.drawImage(laser, this.playerMiddle, mainPlayer.y, this.width, this.height);
     }
 
     //move laser
     move() {
         this.y -= this.speed;
-        ctx.drawImage(laser, playerMiddle, this.y, this.width, this.height);
+        ctx.drawImage(laser, this.playerMiddle, this.y, this.width, this.height);
+    }
+
+    setPlayerMiddle(playerMiddleVal) {
+        this.playerMiddle = playerMiddleVal;
+    }
+
+    getPlayerMiddle() {
+        return this.playerMiddle;
     }
 
     update() {
@@ -38,6 +48,7 @@ class LaserBeam {
             this.move();
             if (this.y < 0) {
                 this.fired = false;
+                this.playerMiddle = 0;
             }
         }
     }

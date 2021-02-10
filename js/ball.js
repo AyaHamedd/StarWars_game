@@ -52,16 +52,23 @@ class Ball {
         console.log(this.img);
 
         //diameter = 30 smallest ball
-        let newBall1 = new Ball(this.cloneImage(), this.left - 10, this.top + 3, this.diameter - 20, this.velX, this.velY);
-        let newBall2 = new Ball(this.cloneImage(), this.left + 10, this.top + 3, this.diameter - 20, - this.velX, this.velY);
+        let newBall1 = new Ball(this.cloneImage(), this.left - 10, this.top + 5, this.diameter - 20, this.velX, this.velY);
+        let newBall2 = new Ball(this.cloneImage(), this.left + 10, this.top + 5, this.diameter - 20, - this.velX, this.velY);
 
         console.log("width: " + newBall1.img.width);
         console.log("height: " + newBall1.img.height);
 
         let ballIndex = balls.indexOf(this);
         balls.splice(ballIndex, 1);
-        balls.push(newBall1);
-        balls.push(newBall2);
+        console.log(newBall1.diameter);
+
+        if(newBall1.diameter !== 10) {
+            console.log("push");
+            balls.push(newBall1);
+        }
+        if(newBall2.diameter !== 10) {
+            balls.push(newBall2);
+        }
     }
 
     draw() {
