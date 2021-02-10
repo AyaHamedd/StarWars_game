@@ -26,6 +26,11 @@ class LaserBeam {
         ctx.drawImage(laser, this.playerMiddle, mainPlayer.y, this.width, this.height);
     }
 
+    resetLaser(){
+        this.fired=false;
+        this.y = 0;
+    }
+
     //move laser
     move() {
         this.y -= this.speed;

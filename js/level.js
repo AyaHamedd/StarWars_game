@@ -135,7 +135,7 @@ class Game {
     loseLife() {
         mainPlayer.lives--;
         mainPlayer.alive=false;
-        gameBody.style.backgroundBlendMode = "luminosity";
+        gameBody.style.backdropFilter = "grayscale(1.0)";
         ground.style.filter = "grayscale(100%)";
         livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
         if (mainPlayer.lives == 0) {
@@ -177,11 +177,12 @@ class Game {
     }
 
     drawLevel(){
-        gameBody.style.backgroundBlendMode = "normal";
+        gameBody.style.backdropFilter = "grayscale(0.0)";
         ground.style.filter = "grayscale(0%)";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         levelOne.drawBalls();
         mainPlayer.resetPlayer();
+        laserBeam.resetLaser();
         mainPlayer.draw();
     }
 }
