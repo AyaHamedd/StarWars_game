@@ -6,6 +6,7 @@ const redCharacter = document.getElementById("red");
 const blueCharacter = document.getElementById("blue");
 const greenCharacter = document.getElementById("green");
 const characters = document.getElementsByTagName("img");
+var audio = document.getElementById("audio");
 
 pinkCharacter.addEventListener("click", selectCharHandler);
 whiteCharacter.addEventListener("click", selectCharHandler);
@@ -14,20 +15,23 @@ redCharacter.addEventListener("click", selectCharHandler);
 blueCharacter.addEventListener("click", selectCharHandler);
 greenCharacter.addEventListener("click", selectCharHandler);
 
-localStorage.setItem("selectedCharacter", "pink"); 
+localStorage.setItem("selectedCharacter", "pink");
 
-function selectCharHandler(e){
+function selectCharHandler(e) {
     /*Set The selectedCharacter to the character id that triggered the function*/
-    localStorage.setItem("selectedCharacter", this.id); 
+    localStorage.setItem("selectedCharacter", this.id);
     /* Get the selected character imager*/
-    var selectedCharImg= document.getElementById(this.id);
+    var selectedCharImg = document.getElementById(this.id);
     /*Reset all characters borders to default*/
-    for (var i = 0; i < characters.length; i++){
-        characters[i].style.border="";
+    for (var i = 0; i < characters.length; i++) {
+        characters[i].style.border = "";
         characters[i].style.borderRadius = ""
     }
     /*Add a border on the selected character*/
-    selectedCharImg.style.border="0.5vw ridge #27FFE5";
+    selectedCharImg.style.border = "0.5vw ridge #27FFE5";
     selectedCharImg.style.borderRadius = "2.5vw"
+}
+window.onload = function playAudio() {
+    audio.play();
 }
 

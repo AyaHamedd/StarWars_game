@@ -12,14 +12,18 @@
         style="color:rgb(255, 143, 199);font-family:'Courier New';font-weight: 900; text-align: center;font-size: 2.5vw; margin-top: 4vh;">
         Your ship is launching!</p>
     <img id="characterInsideShip">
-    <audio id='audio' src="../../rocket.wav"></audio>
+    <audio id='audio' src="../sounds/rocket.wav"></audio>
+
+
     <script>
         const character = localStorage.getItem("selectedCharacter");
         document.getElementById("characterInsideShip").src = "../img/" + character + ".png";
         setTimeout(myFunction, 3100);
+
         window.onload = function () {
             document.getElementById("audio").play();
         }
+
         function myFunction() {
             window.location.href = "../html/level.html";
         }

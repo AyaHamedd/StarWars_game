@@ -11,21 +11,29 @@
 
 <body>
   <div class="container">
-    <p style="margin-top: 100px;">Who We Are ?</p>
-    <p>We are ITI students who have passion to develop funny game</p>
-    <p>Game implemented with client side technolgies</p>
-    <p>Developed By <br>
-      Aya Hamed<br>
-      Heba Mostafa<br>
-      Sara Magdy<br>
-      Leena Sherif<br>
+    <p class="beginning" style="margin-top: 100px;">Who We Are ?</p><br>
+    <p>We are a group of students at ITI from Open Source applications track,
+      intake 41.who have a passion for developing challenging and fun games.</p><br>
+    <p class="mid">Star Wars game is a clone of the classic flash game called bubble trouble.
+      The goal is to pop the bubbles bouncing around the screen using a laser beam.<br>
+      The game is built with HTML,CSS and javascript.<br>
+      Hope you enjoy playing the game as much as we enjoyed developing it.</p><br>
+    <p class="end">&nbsp;&nbsp;Developed By</p>
+    <p>
+      Aya Hamed &nbsp;&nbsp;&nbsp;Heba Mostafa<br>
+      Sarah Magdy &nbsp;&nbsp;&nbsp;Leena Sherif
     </p>
-    <div class="part1"></div>
-    <div class="part2"></div>
-    <a href="../starwars.html" id="homeBtn" style="
-  top: 10px;
-">Home</a>
+    <div class="part1" onmouseover="playAudio()"></div>
+    <div class="part2" onmouseover="playAudio()"></div>
+    <a href="../starwars.html" id="homeBtn" style="top: 10px;">Home</a>
   </div>
+  <audio id='audio' src="../sounds/door.wav"></audio>
+  <script>
+    var audio1 = document.getElementById("audio");
+    function playAudio() {
+      audio1.play();
+    }
+  </script>
 </body>
 
 </html>

@@ -44,7 +44,7 @@ nav li {
     margin: 5vh;
 }
 nav li a {
-    color: white;
+    /* color: white; */
     text-transform: uppercase;
     text-decoration: none;
     font-size: 1.5vw;

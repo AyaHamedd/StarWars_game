@@ -24,14 +24,19 @@ body {
 }
 
 p {
-  font-family: "Courier New";
+  font-family: 'Corben', cursive;
   text-align: center;
   font-weight: 700;
-  font-size: 2vw;
-  margin: 0px 0px 0px 100px;
+  font-size: 1.9vw;
+  margin: 0px 0px 0px 200px;
   padding: 0px;
-  color: white;
-
+  color: whitesmoke;
+}
+.beginning{
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(139, 139, 211), 0 0 5px rgb(123, 165, 221);
+}
+.end{
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(139, 139, 211), 0 0 5px rgb(123, 165, 221);
 }
 
 .part1 {
@@ -87,7 +92,7 @@ p {
 }
 
 #homeBtn:hover {
-  background: #ef32d9;
+  background:  #29C708;
   border: solid #FFFFFF 0.1vw;
   -webkit-border-radius: 1.2vw;
   -moz-border-radius: 1.2vw;

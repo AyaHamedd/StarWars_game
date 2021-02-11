@@ -32,8 +32,10 @@ livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
 const groundHeight = 40;
 const roofToPlayerDistance = ctx.canvas.height - groundHeight - mainPlayer.height;
 const collisionTolerance = 13;
+var sound = new Audio('../sounds/Victory.mp3');
 
 class Game {
+    
     level = -1;
     maxLevel = 6;
     ballVelX = 1;
@@ -171,11 +173,13 @@ class Game {
     }
 
     winGame() {
+        
         label.innerText = "Congratulations you won!";
         label.style.visibility = "visible";
         document.getElementById("homeBtn").style.visibility = "visible";
         document.getElementById("playBtn").style.visibility = "visible";
         gameBody.style.backgroundImage = "url('../img/celebrate.gif')";
+        playAudio();
     }
 
     drawLevel(){
@@ -219,7 +223,9 @@ function setGame() {
     levelOne.setBackground();
     levelOne.setGround();
 }
-
+function playAudio() {
+    sound.play();
+  }
 document.body.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
     console.log(e.keyCode);

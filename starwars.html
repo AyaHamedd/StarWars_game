@@ -8,9 +8,6 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="./css/starwars.css">
-
-
-
 </head>
 
 <body>
@@ -18,8 +15,8 @@
     <div class="row">
       <div class="d-flex justify-content-center   mt-5 pt-5">
         <p class="startwars-title text-center"> STAR WARS
-           <img class="gif-img" src="./img/starwars.gif"> 
-          </p>
+          <img class="gif-img" src="./img/starwars.gif">
+        </p>
       </div>
       <div class="d-flex justify-content-center ">
         <nav>
@@ -32,11 +29,17 @@
         </nav>
       </div>
     </div>
-
+    <audio id='audio' src="../StarWars_game/sounds/Inspiration.mp3"></audio>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-      crossorigin="anonymous"></script>
+      integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+      </script>
+    <script>
+      var audio = document.getElementById("audio");
+      window.onload = function playAudio() {
+        audio.play();
+      }
+    </script>
 </body>
 
 </html>
