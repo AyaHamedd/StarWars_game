@@ -14,7 +14,6 @@ ctx = canvas.getContext("2d");
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
 
-//let level = 1;
 let mainPlayer = new MainPlayer();
 
 let ball1 = planet[0];
@@ -162,9 +161,12 @@ class Game {
             this.winGame();
         }
         else {
-            label.innerText = "level " + this.getLevel();
+            mainPlayer.alive=false;
+            gameBody.style.backdropFilter = "grayscale(1.0)";
+            ground.style.filter = "grayscale(100%)";
+            label.innerText = "Congratulations! Going onto the next level...";
             label.style.visibility = "visible";
-            setTimeout(setGame, 2000);
+            setTimeout(restartGame, 1500);
         }
     }
 
@@ -205,6 +207,7 @@ function startGame() {
 
 function restartGame() {
     mainPlayer.alive=true;
+    setGame();
     label.innerText = "level " + levelOne.getLevel();
     levelOne.setBallsArray();
     levelOne.drawLevel()
@@ -212,7 +215,6 @@ function restartGame() {
 }
 
 function setGame() {
-    label.style.visibility = "hidden";
     levelOne.setBallsArray();
     levelOne.setBackground();
     levelOne.setGround();

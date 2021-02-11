@@ -1,0 +1,122 @@
+
+body {
+    background-image: url(../img/how-to-play-bg.jpeg);
+    background-size: cover;
+    font-family: 'Corben', cursive;
+}
+
+.arrow-sizes {
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    margin-top: 20vh;
+}
+
+#page-heading {
+    color: white;
+    text-align: center;
+    font-size: 300%;
+}
+
+.container {
+    margin-left: 29%;
+    position: relative;
+    width: 40vw;
+    height: 31rem;
+}
+
+.bg-div {
+    background-color: black;
+    width: 40vw;
+    height: 31rem;
+    opacity: 0.5;
+    border-radius: 10%;
+    position: absolute;
+}
+
+.content-div {
+    color: white;
+    position: absolute;
+    width: 40vw;
+    height: 31rem;
+    /* margin-left: 2rem; */
+    text-align: center;
+}
+
+#content-txt {
+    padding-top: 3%;
+    font-size: 25px;
+}
+
+#right-arrow:hover {
+    cursor: pointer;
+}
+
+#left-arrow:hover {
+    cursor: pointer;
+}
+
+#right-arrow {
+    margin-right: 10px;
+    float: right;
+}
+
+#left-arrow {
+    margin-left: 10px;
+    float: left;
+}
+
+#homeBtn{
+    position: absolute;
+    margin-top: 0;
+    margin-left: 0;
+  }
+  
+  #homeBtn {
+    -webkit-border-radius: 1.2vw;
+    -moz-border-radius: 1.2vw;
+    border-radius: 1.2vw;
+    color: #FFFFFF;
+    font-family: Courier New;
+    font-size: 1.4vw;
+    font-weight: 700;
+    padding: 0.5vw;
+    background-color: #3DD3F6;
+    text-shadow: 0.1vw 0.1vw 1vw #000000;
+    border: solid #FFFFFF 0.1vw;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  #homeBtn:hover {
+    background: #29C708;
+    border: solid #FFFFFF 0.1vw;
+    -webkit-border-radius: 1.2vw;
+    -moz-border-radius: 1.2vw;
+    border-radius: 1.2vw;
+    text-decoration: none;
+  }
+
+@media (max-width: 800px) {
+    #content-txt {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .arrow-sizes {
+        background: transparent;
+        width: 30px;
+        height: 30px;
+    }
+    #right-arrow {
+        margin-right: 2px;
+    }
+
+    #left-arrow {
+        margin-left: 2px;
+    }
+
+}

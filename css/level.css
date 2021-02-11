@@ -12,7 +12,7 @@
 }
 
 body {
-    background: url(../img/level1.jpg);
+    /* background: url(../img/level1.jpg); */
     background-repeat: no-repeat;
     background-size: cover;
     font-family:'Courier New';
@@ -22,7 +22,7 @@ body {
     position: absolute;
     bottom: 0;
     left:0;
-    background: url(../img/ground.jpg);
+    /* background: url(../img/ground.jpg); */
     height: 40px;
     width: 100%;
     background-repeat: no-repeat;
