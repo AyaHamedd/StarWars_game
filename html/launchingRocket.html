@@ -18,13 +18,13 @@
     <script>
         const character = localStorage.getItem("selectedCharacter");
         document.getElementById("characterInsideShip").src = "../img/" + character + ".png";
-        setTimeout(myFunction, 3100);
 
         window.onload = function () {
             document.getElementById("audio").play();
+            setTimeout(goToLevelScene, 4000);
         }
 
-        function myFunction() {
+        function goToLevelScene() {
             window.location.href = "../html/level.html";
         }
     </script>

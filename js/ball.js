@@ -46,8 +46,18 @@ class Ball {
     }
 
     splitBall(){
-        let newBall1 = new Ball(this.cloneImage(), this.left - 10, this.top + 5, this.diameter - 20, this.velX, this.velY);
-        let newBall2 = new Ball(this.cloneImage(), this.left + 10, this.top + 5, this.diameter - 20, - this.velX, this.velY);
+
+        let newLeft1 = (this.left - 10);
+        if(newLeft1 < 0) {
+            newLeft1 = 0;
+        }
+        let newLeft2 = (this.left + 10);
+        if(newLeft2 > ctx.canvas.width) {
+            newLeft2 = ctx.canvas.width;
+        }
+
+        let newBall1 = new Ball(this.cloneImage(), newLeft1, this.top + 5, this.diameter - 20, this.velX, this.velY);
+        let newBall2 = new Ball(this.cloneImage(), newLeft2 + 10, this.top + 5, this.diameter - 20, - this.velX, this.velY);
 
         let ballIndex = balls.indexOf(this);
         balls.splice(ballIndex, 1);

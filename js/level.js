@@ -35,7 +35,7 @@ const collisionTolerance = 13;
 var sound = new Audio('../sounds/Victory.mp3');
 
 class Game {
-    
+
     level = -1;
     maxLevel = 6;
     ballVelX = 1;
@@ -173,7 +173,6 @@ class Game {
     }
 
     winGame() {
-        
         label.innerText = "Congratulations you won!";
         label.style.visibility = "visible";
         document.getElementById("homeBtn").style.visibility = "visible";
@@ -193,15 +192,8 @@ class Game {
     }
 }
 
-var levelOne = new Game();
-levelOne.setLevel(1);
-levelOne.setBallsArray();
-levelOne.setBackground();
-levelOne.setGround();
-label.innerText = "Level " + levelOne.getLevel();
-setTimeout(startGame, 2000);
 window.onload = function () {
-    levelOne.drawLevel()
+    levelOne.drawLevel();
 };
 
 function startGame() {
@@ -233,3 +225,12 @@ document.body.addEventListener("keydown", function (e) {
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
+
+var levelOne = new Game();
+levelOne.setLevel(1);
+levelOne.setBallsArray();
+levelOne.setBackground();
+levelOne.setGround();
+label.innerText = "Level " + levelOne.getLevel();
+
+setTimeout(startGame, 2000);
