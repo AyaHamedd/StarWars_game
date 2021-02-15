@@ -20,6 +20,8 @@ localStorage.setItem("selectedCharacter", "pink");
 function selectCharHandler(e) {
     /*Set The selectedCharacter to the character id that triggered the function*/
     localStorage.setItem("selectedCharacter", this.id);
+    localStorage.setItem("lives", "3");
+    
     /* Get the selected character imager*/
     var selectedCharImg = document.getElementById(this.id);
     /*Reset all characters borders to default*/
