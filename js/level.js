@@ -169,7 +169,7 @@ class Game {
             mainPlayer.alive=false;
             gameBody.style.backdropFilter = "grayscale(1.0)";
             ground.style.filter = "grayscale(100%)";
-            label.innerText = "Moving to the next level..";
+            label.innerText = "Moving to the next level";
             label.style.visibility = "visible";
             setTimeout(restartGame, 1500);
         }
