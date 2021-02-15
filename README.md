@@ -5,7 +5,10 @@ Hope you enjoy playing the game as much as we enjoyed developing it.
 
 ## Table of Contents
 
-
+- [How to Play](https://github.com/leenasherif239/StarWars_game#%EF%B8%8Fhow-to-play)
+- [Demo](https://github.com/leenasherif239/StarWars_game#-demo)
+- [Game Link](https://github.com/leenasherif239/StarWars_game#-game-link)
+- [About Us](https://github.com/leenasherif239/StarWars_game#about-us)
 
 ## 🕹️How to play
 
@@ -15,7 +18,9 @@ Players control their character by using the arrow keys. Use spacebar to shoot a
 
 ## 🎮 Demo
 
-![demo](\img\demo.gif)
+![demo](https://github.com/leenasherif239/StarWars_game/blob/main/img/demo.gif)
+
+
 
 ## 🔗 Game Link 
 
