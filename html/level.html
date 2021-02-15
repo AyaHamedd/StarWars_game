@@ -1,17 +1,21 @@
 <html>
 
 <head>
-    <link rel="preload" as="image" href="../img/3lives.png">
-    <link rel="preload" as="image" href="../img/2lives.png">
-    <link rel="preload" as="image" href="../img/1lives.png">
-    <link rel="preload" as="image" href="../img/0lives.png">
     <link rel="stylesheet" type="text/css" href="../css/level.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script language="JavaScript">
+        function preloader() {
+            charLeft = new Image();
+            charRight = new Image();
+            charRight.src = "../img/" + localStorage.getItem("selectedCharacter"); + "Right.png";
+            charLeft.src = "../img/" + localStorage.getItem("selectedCharacter"); + "Left.png";
+        }
+    </script>
 </head>
 
-<body>
+<body onLoad="javascript:preloader()">
     <img id="lives" src="../img/3lives.png" width="120px"><img>
     <a id="playBtn" href="./level.html">
         <span></span>
@@ -20,7 +24,7 @@
         <span></span>
         Play Again
     </a>
-    <a  id="homeBtn" href="../index.html">
+    <a id="homeBtn" href="../index.html">
         <span></span>
         <span></span>
         <span></span>
