@@ -62,10 +62,10 @@ class Ball {
         let ballIndex = balls.indexOf(this);
         balls.splice(ballIndex, 1);
 
-        if(newBall1.diameter !== 70) {
+        if(newBall1.diameter !== 10) {
             balls.push(newBall1);
         }
-        if(newBall2.diameter !== 70) {
+        if(newBall2.diameter !== 10) {
             balls.push(newBall2);
         }
     }
