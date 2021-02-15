@@ -14,7 +14,7 @@ class MainPlayer {
         this.velY = 0;
         this.velX = 0;
         this.alive= true;
-        this.lives=localStorage.getItem("lives");
+        this.lives=3;
         this.friction = 0.8;// friction
         this.x = this.gameWidth / 2 - this.width / 2;
         this.y = this.gameHeight - this.height - 40;

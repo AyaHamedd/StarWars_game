@@ -135,7 +135,7 @@ class Game {
 
     loseLife() {
         mainPlayer.lives--;
-        localStorage.setItem("lives",mainPlayer.lives);
+        // localStorage.setItem("lives",mainPlayer.lives);
         mainPlayer.alive=false;
         gameBody.style.backdropFilter = "grayscale(1.0)";
         ground.style.filter = "grayscale(100%)";
@@ -152,6 +152,7 @@ class Game {
     }
 
     gameOver() {
+        console.log(mainPlayer.lives);
         label.innerText = "Game Over";
         label.style.visibility = "visible";
         document.getElementById("homeBtn").style.visibility = "visible";
@@ -225,9 +226,9 @@ document.body.addEventListener("keydown", function (e) {
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
 });
-document.body.addEventListener("click", function (e) {
-    localStorage.setItem("lives", "3");
-});
+// document.body.addEventListener("click", function (e) {
+//     localStorage.setItem("lives", "3");
+// });
 
 function storeData() {
     localStorage.setItem("level", game.getLevel());
@@ -237,7 +238,7 @@ function storeData() {
 function getData() {
     let storedLevel = localStorage.getItem("level");
     let storedLives = localStorage.getItem("lives");
-
+    console.log(storedLives);
     if(!storedLevel || parseInt(storedLives) === 0){
         game.setLevel(1);
     }
@@ -260,12 +261,13 @@ function preloader(e) {
 
 this.addEventListener("DOMContentLoaded", preloader, true);
 var game = new Game();
-getData();
-game.setBallsArray();
-game.setBackground();
-game.setGround();
-label.innerText = "Level " + game.getLevel();
+
 window.onload = function () {
+    getData();
+    game.setBallsArray();
+    game.setBackground();
+    game.setGround();
+    label.innerText = "Level " + game.getLevel();
     setTimeout(startGame, 2000);
     game.drawLevel();
 };
