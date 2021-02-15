@@ -1,6 +1,7 @@
 const gameBody = document.getElementsByTagName("body")[0];
 const livesBlock = document.getElementById("lives");
 const canvas = document.getElementById("myCanvas");
+const playAgainBtn = document.getElementById("playBtn");
 const planet = document.getElementsByClassName("planet");
 const label = document.querySelector("#label");
 const ground = document.querySelector("#ground");
@@ -134,6 +135,7 @@ class Game {
 
     loseLife() {
         mainPlayer.lives--;
+        localStorage.setItem("lives",mainPlayer.lives);
         mainPlayer.alive=false;
         gameBody.style.backdropFilter = "grayscale(1.0)";
         ground.style.filter = "grayscale(100%)";
@@ -167,7 +169,7 @@ class Game {
             mainPlayer.alive=false;
             gameBody.style.backdropFilter = "grayscale(1.0)";
             ground.style.filter = "grayscale(100%)";
-            label.innerText = "Congratulations! Going onto the next level...";
+            label.innerText = "Moving to the next level..";
             label.style.visibility = "visible";
             setTimeout(restartGame, 1500);
         }
@@ -223,10 +225,12 @@ function playAudio() {
   }
 document.body.addEventListener("keydown", function (e) {
     keys[e.keyCode] = true;
-    console.log(e.keyCode);
 });
 document.body.addEventListener("keyup", function (e) {
     keys[e.keyCode] = false;
+});
+document.body.addEventListener("click", function (e) {
+    localStorage.setItem("lives", "3");
 });
 
 function storeData() {
