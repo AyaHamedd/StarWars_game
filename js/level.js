@@ -261,13 +261,12 @@ function preloader(e) {
 
 this.addEventListener("DOMContentLoaded", preloader, true);
 var game = new Game();
-
+getData();
+game.setBallsArray();
+game.setBackground();
+game.setGround();
+label.innerText = "Level " + game.getLevel();
 window.onload = function () {
-    getData();
-    game.setBallsArray();
-    game.setBackground();
-    game.setGround();
-    label.innerText = "Level " + game.getLevel();
     setTimeout(startGame, 2000);
     game.drawLevel();
 };
