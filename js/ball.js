@@ -61,7 +61,6 @@ class Ball {
 
         let ballIndex = balls.indexOf(this);
         balls.splice(ballIndex, 1);
-        console.log(newBall1.diameter);
 
         if(newBall1.diameter !== 10) {
             balls.push(newBall1);

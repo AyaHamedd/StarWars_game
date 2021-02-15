@@ -251,14 +251,20 @@ function getData() {
     livesBlock.src = "../img/" + mainPlayer.lives + "lives.png";
 }
 
+function preloader(e) {
+    charLeft = new Image();
+    charRight = new Image();
+    charRight.src = "../img/" + localStorage.getItem("selectedCharacter")+ "Right.png";
+    charLeft.src = "../img/" + localStorage.getItem("selectedCharacter")+ "Left.png";
+}
 
+this.addEventListener("DOMContentLoaded", preloader, true);
 var game = new Game();
 getData();
 game.setBallsArray();
 game.setBackground();
 game.setGround();
 label.innerText = "Level " + game.getLevel();
-
 window.onload = function () {
     setTimeout(startGame, 2000);
     game.drawLevel();
