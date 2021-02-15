@@ -139,7 +139,7 @@ class Game {
         mainPlayer.alive=false;
         gameBody.style.backdropFilter = "grayscale(1.0)";
         ground.style.filter = "grayscale(100%)";
-        livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
+        livesBlock.src = "../img/" + mainPlayer.lives + "lives.png";
         if (mainPlayer.lives == 0) {
             mainPlayer.alive = false;
             this.gameOver();
@@ -196,10 +196,6 @@ class Game {
     }
 }
 
-window.onload = function () {
-    game.drawLevel();
-};
-
 function startGame() {
     label.style.visibility = "hidden";
     game.update();
@@ -252,7 +248,7 @@ function getData() {
     if(storedLives && parseInt(storedLives) !== 0 && parseInt(storedLevel) !== 1) {
         mainPlayer.lives = parseInt(storedLives);
     }
-    livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
+    livesBlock.src = "../img/" + mainPlayer.lives + "lives.png";
 }
 
 
@@ -263,4 +259,7 @@ game.setBackground();
 game.setGround();
 label.innerText = "Level " + game.getLevel();
 
-setTimeout(startGame, 2000);
+window.onload = function () {
+    setTimeout(startGame, 2000);
+    game.drawLevel();
+};
