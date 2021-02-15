@@ -29,8 +29,9 @@ Players control their character by using the arrow keys. Use spacebar to shoot a
 ## 👩‍💻About Us
 
 We are a group of software engineering students at ITI from Open Source applications track,intake 41.who have a passion for developing challenging and fun games. 
-Aya Hamed 
-Heba Mostafa
-Sarah Magdy 
-Leena Sherif
+
+- Aya Hamed 
+- Heba Mostafa
+- Sarah Magdy 
+- Leena Sherif
 
