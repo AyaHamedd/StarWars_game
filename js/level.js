@@ -29,7 +29,6 @@ let balls = [];
 let laserBeam = new LaserBeam();
 let keys = [];
 
-livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
 const groundHeight = 40;
 const roofToPlayerDistance = ctx.canvas.height - groundHeight - mainPlayer.height;
 const collisionTolerance = 13;
@@ -157,11 +156,13 @@ class Game {
         label.style.visibility = "visible";
         document.getElementById("homeBtn").style.visibility = "visible";
         document.getElementById("playBtn").style.visibility = "visible";
+        storeData();
     }
 
     winLevel() {
         this.level++;
         if(this.level === this.maxLevel) {
+            this.level = 1;
             this.winGame();
         }
         else {
@@ -181,13 +182,14 @@ class Game {
         document.getElementById("playBtn").style.visibility = "visible";
         gameBody.style.backgroundImage = "url('../img/celebrate.gif')";
         playAudio();
+        storeData();
     }
 
     drawLevel(){
         gameBody.style.backdropFilter = "grayscale(0.0)";
         ground.style.filter = "grayscale(0%)";
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        levelOne.drawBalls();
+        game.drawBalls();
         mainPlayer.resetPlayer();
         laserBeam.resetLaser();
         mainPlayer.draw();
@@ -195,27 +197,28 @@ class Game {
 }
 
 window.onload = function () {
-    levelOne.drawLevel();
+    game.drawLevel();
 };
 
 function startGame() {
     label.style.visibility = "hidden";
-    levelOne.update();
+    game.update();
 }
 
 function restartGame() {
     mainPlayer.alive=true;
     setGame();
-    label.innerText = "level " + levelOne.getLevel();
-    levelOne.setBallsArray();
-    levelOne.drawLevel()
+    label.innerText = "level " + game.getLevel();
+    game.setBallsArray();
+    game.drawLevel()
     setTimeout(startGame, 2000);
 }
 
 function setGame() {
-    levelOne.setBallsArray();
-    levelOne.setBackground();
-    levelOne.setGround();
+    game.setBallsArray();
+    game.setBackground();
+    game.setGround();
+    storeData();
 }
 function playAudio() {
     sound.play();
@@ -230,11 +233,34 @@ document.body.addEventListener("click", function (e) {
     localStorage.setItem("lives", "3");
 });
 
-var levelOne = new Game();
-levelOne.setLevel(1);
-levelOne.setBallsArray();
-levelOne.setBackground();
-levelOne.setGround();
-label.innerText = "Level " + levelOne.getLevel();
+function storeData() {
+    localStorage.setItem("level", game.getLevel());
+    localStorage.setItem("lives", mainPlayer.lives);
+}
+
+function getData() {
+    let storedLevel = localStorage.getItem("level");
+    let storedLives = localStorage.getItem("lives");
+
+    if(!storedLevel || parseInt(storedLives) === 0){
+        game.setLevel(1);
+    }
+    else{
+        game.setLevel(parseInt(storedLevel));
+    }
+
+    if(storedLives && parseInt(storedLives) !== 0 && parseInt(storedLevel) !== 1) {
+        mainPlayer.lives = parseInt(storedLives);
+    }
+    livesBlock.src = "../img/" + mainPlayer.lives + "Lives.png";
+}
+
+
+var game = new Game();
+getData();
+game.setBallsArray();
+game.setBackground();
+game.setGround();
+label.innerText = "Level " + game.getLevel();
 
 setTimeout(startGame, 2000);
