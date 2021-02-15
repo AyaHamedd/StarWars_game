@@ -15,7 +15,7 @@ Players control their character by using the arrow keys. Use spacebar to shoot a
 
 ## 🎮 Demo
 
-
+![demo](\img\demo.gif)
 
 ## 🔗 Game Link 
 
